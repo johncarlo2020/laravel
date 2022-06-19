@@ -11,7 +11,11 @@
                    <div class="row">
                         <div class="student-info col-6">
                             <p class="h6 fw-bold legend-details">Personal Information</p>
-                            <p><b>Name :            </b>{{$users[0]->first_name}} {{$users[0]->middle_name}} {{$users[0]->last_name}} , {{$users[0]->suffix}} </p>
+                            <p><b>Name :            </b>{{$users[0]->first_name}} {{$users[0]->middle_name}} {{$users[0]->last_name}} 
+                            @if($users[0]->suffix != null)
+                            , 
+                            @endif
+                            {{$users[0]->suffix}} </p>
                             <p><b>Address :         </b>{{$users[0]->address}} </p>
                             <p><b>Age :             </b>{{$age[0]->age}}</p>
                             <p><b>Gender :          </b>{{$users[0]->gender}} </p>

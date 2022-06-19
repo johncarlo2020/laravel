@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // dd('asdasdsd');
+        return view('welcome');
+    }
+    public function filesz()
+    {
+        // dd('asdasdsd');
         return view('home');
     }
     public function staffHome()

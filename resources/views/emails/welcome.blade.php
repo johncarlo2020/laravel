@@ -7,7 +7,7 @@
                     <div class="">
                         <h4 style="font-size:25px; margin: 0;">Castillejos Scholarship APPLICATION SYSTEM</h4>
                     </div>
-                    @if ($data['status'] === 6 )
+                    @if ($data['status'] == 6 )
                     <div class="invoice p-3">
                         <h5 style="    font-size: 19px;
                         margin-bottom: 3px;margin-top:10px;
@@ -57,24 +57,18 @@
 
                     @elseif($data['status'] == 7)
                     <div class="invoice p-3">
-
-                        <p style="margin-bottom: 0;"><span class="font-weight-bold d-block mt-4">We regret to inform you, <b> {{ $data['fname'] }} {{ $data['lname'] }}  </b> that your application has been rejected</span> </p>
+                        <p style="margin-bottom: 0;"><span class="font-weight-bold d-block mt-4">We regret to inform you, <b>" {{ $data['fname'] }} {{ $data['lname'] }} "</b> that your application has been declined due to the result of your examination which is lower than 75 % , the passing rate.</span> </p>
                         <p style=" padding-bottom:0px;margin-bottom: 0; "><span>Please try again next year!</span></p>
                         <div class="payment border-top mt-3 mb-3 border-bottom table-responsive" style="padding: 0 0; border-bottom:solid 1px rgb(134, 134, 134);border-top:solid 1px rgb(134, 134, 134); margin: 20px 0;">
                         </div>
                         <p>We hope for your success next time.</p>
-                        <p class="font-weight-bold mb-0"> thank you.!</p>
+                        <p class="font-weight-bold mb-0"> Thank you.</p>
                     </div>
-
                     @endif
-
-
                 </div>
             </div>
         </div>
     </div>
-
-
 </body>
 </html>
 

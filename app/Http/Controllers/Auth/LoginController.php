@@ -61,18 +61,18 @@ class LoginController extends Controller
                 return redirect()->route('applicant.declined');
             }elseif(auth()->user()->user_type_id == 6){
                 return redirect()->route('applicant.examiner');
-            }
-            
-            elseif(auth()->user()->user_type_id == 3){
+            }elseif(auth()->user()->user_type_id == 3){
                 $id = auth()->user()->id;
                 $exams = DB::select("SELECT * FROM requirements where id = $id;");
-                if (count($exams) == 0) {
-                //    dd('more than 0');
-                return redirect()->route('home');
-            }else{
-                //    dd('less than 0');
-                return redirect()->route('withfiles');
-                }
+            //     if (count($exams) == 0) {
+            //     //    dd('more than 0');
+            //     return redirect()->route('home');
+            // }else{
+            //     //    dd('less than 0');
+            //     return redirect()->route('withfiles');
+            //     }
+                return redirect()->route('scholarhome');
+
             }
             else{
                 // dd('sadads');

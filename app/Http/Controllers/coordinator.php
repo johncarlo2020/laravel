@@ -202,19 +202,27 @@ class coordinator extends Controller
             'address'=>'',
 
         ];
-        $email=DB::select("select email ,first_name,last_name,user_type_id,exnumber from users where id=$id");
-        $data['fname'] = $email[0]->first_name;
-        $data['lname'] = $email[0]->last_name;
-        $data['status'] = $email[0]->user_type_id;
-
-       Mail::to($email[0]->email)->send(new WelcomeMail( $data));
 
         if ($grade < 75) {
             $users = DB::select("UPDATE users SET user_type_id=7 where id=$id ;");
+
+            $email=DB::select("select email ,first_name,last_name,user_type_id,exnumber from users where id=$id");
             toastr()->warning('Examinee failed the exam',$email[0]->first_name .' '.$email[0]->last_name.' Will move to Declined');
+            $data['fname'] = $email[0]->first_name;
+            $data['lname'] = $email[0]->last_name;
+
+            $data['status'] = $email[0]->user_type_id;
+            Mail::to($email[0]->email)->send(new WelcomeMail( $data));
         }else{
             $users = DB::select("UPDATE users SET user_type_id=3 where id=$id ;");
+
+            $email=DB::select("select email ,first_name,last_name,user_type_id,exnumber from users where id=$id");
             toastr()->success('Examinee passed the exam',$email[0]->first_name .' '.$email[0]->last_name.' Will move to Scholars');
+            $data['fname'] = $email[0]->first_name;
+            $data['lname'] = $email[0]->last_name;
+
+            $data['status'] = $email[0]->user_type_id;
+            Mail::to($email[0]->email)->send(new WelcomeMail( $data));
         }
         $users = DB::select("UPDATE users SET score=$grade where id=$id ;");
 

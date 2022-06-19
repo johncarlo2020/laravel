@@ -9,7 +9,9 @@
 
                 <div class="card-body">
                 {{-- <h2 class="mb-5 mt-2"> Welcome ! {{ Auth::user()->first_name }}</h2> --}}
-
+                    <input id="one" value="0" type="text" hidden>
+                    <input id="two" value="0" type="text" hidden>
+                    <input id="three" value="0" type="text" hidden>
                 <form action="scholar/requirements" method="post" enctype="multipart/form-data">
                 @csrf
 		        @method('post')
@@ -19,6 +21,7 @@
                     <input class="form-control mb-1 btn-primary rounded-0 " type="file" name="cor[]" id="cor" accept="application/pdf,image/*"></input>
                     <small class='text-primary'><center id="corpdf">Accepted file type: PDF,jpeg only</center></small>
                     <small><center class="text-danger d-none" id="corerror">Field cannot be empty!</center></small>
+                    <small><center class="text-danger d-none" id="corz">File size must be less than 5mb!</center></small>
                     <center><img class="img-fluid rounded mx-auto d-block d-none" id="blah" style="max-height: 200px;" height="150px" src='' alt="Image Unavailable"></center>
 
                 </div>
@@ -27,6 +30,8 @@
                     <input  class="form-control mb-1 mb-1 btn-primary rounded-0 " type="file" name="cog[]" id="cog" accept="application/pdf,image/*">
                     <small class='text-primary'><center id="cogpdf">Accepted file type: PDF,jpeg only</center></small>
                     <small><center class="text-danger  d-none" id="cogerror">Field cannot be empty!</center></small>
+                    <small><center class="text-danger d-none" id="cogz">File size must be less than 5mb!</center></small>
+
                     <center><img class="img-fluid rounded mx-auto d-block d-none" id="cogimage" style="max-height: 200px;" height="150px" src='' alt="Image Unavailable"></center>
 
                 </div>
@@ -35,6 +40,7 @@
                     <input class="form-control mb-1 mb-1 btn-primary rounded-0 " type="file" name="id[]" id="id" accept="application/pdf,image/*">
                     <small class='text-primary'><center id="idpdf">Accepted file type: PDF,jpeg only</center></small>
                     <small><center class="text-danger  d-none" id="iderror">Field cannot be empty!</center></small>
+                    <small><center class="text-danger d-none" id="idz">File size must be less than 5mb!</center></small>
                     <center><img class="img-fluid rounded mx-auto d-block d-none" id="idimage" style="max-height: 200px;" height="150px" src='' alt="Image Unavailable"></center>
 
                 </div>
@@ -81,12 +87,25 @@
     </div>
 </div>
     @jquery
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
 
+<script>
 
     cor.onchange = evt => {
         console.log('gagana');
+
+        const [filez] = cor.files
+        console.log(cor.files[0].size);
+        if(cor.files[0].size < 1000000){
+            console.log('maliit');
+            $('#one').attr('value', '0');
+            $('#corz').addClass('d-none');
+        }else{
+            console.log('malaki');
+            $('#one').attr('value', '1');
+
+            $('#corz').removeClass('d-none');
+        }
+
         var mimeType=cor.files[0]['type'];
          const [file] = cor.files
          if(mimeType.split('/')[0] === 'image'){
@@ -104,6 +123,19 @@
         }
       }
       cog.onchange = evt => {
+
+        const [filez] = cog.files
+        console.log(cog.files[0].size);
+        if(cog.files[0].size < 1000000){
+            console.log('maliit');
+            $('#cogz').addClass('d-none');
+            $('#two').attr('value', '0');
+        }else{
+            console.log('malaki');
+            $('#two').attr('value', '1');
+            $('#cogz').removeClass('d-none');
+        }
+
         console.log('gagana');
          const [file] = cog.files
          var mimeType=cog.files[0]['type'];
@@ -122,6 +154,19 @@
          }
       }
       id.onchange = evt => {
+
+        const [filez] = id.files
+        console.log(id.files[0].size);
+        if(id.files[0].size < 1000000){
+            console.log('maliit');
+            $('#three').attr('value', '0');
+            $('#idz').addClass('d-none');
+        }else{
+            console.log('malaki');
+            $('#idz').removeClass('d-none');
+            $('#three').attr('value', '1');
+        }
+
         console.log('gagana');
          const [file] = id.files
          var mimeType=id.files[0]['type'];
@@ -145,6 +190,9 @@
         var cog = $("#cog")[0].files.length;
         var cor = $("#cor")[0].files.length;
         var id  = $("#id")[0].files.length;
+        var one  = $('#one').val();
+        var two = $('#two').val();
+        var three = $('#three').val();
 
         if (cor < 1) {
             $('#corerror').removeClass('d-none');
@@ -167,7 +215,7 @@
              $('#checkerror').removeClass('d-none');
          }
 
-        if(cor > 0 && cog > 0 && id > 0 && $('input[name="checkbox"]').is(':checked')){
+        if(cor > 0 && cog > 0 && id > 0 && $('input[name="checkbox"]').is(':checked') && one == 0 && two == 0 && three == 0){
         console.log('works');
         // $( "#submits" ).click();
         $( ".modalz" ).click();

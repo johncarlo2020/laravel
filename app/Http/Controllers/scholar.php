@@ -20,6 +20,7 @@ class scholar extends Controller
     {
         // dd('scholarcontroller');
         return view('success');
+        
     }
 
     /**
@@ -27,9 +28,10 @@ class scholar extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function scholarhome()
     {
-        //
+        return view('applicant.scholarhome');
+
     }
 
     /**

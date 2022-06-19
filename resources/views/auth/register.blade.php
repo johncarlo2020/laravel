@@ -26,7 +26,7 @@
                             <div class="col-6">
                                 <label for="lname" class="col-form-label text-md-start">{{ __(' Last Name') }}<span class="text-danger"> *</span></label>
                                 <div class="">
-                                    <input onkeydown="return /[a-z]/i.test(event.key)" id="lname" type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" value="{{ old('lname') }}" required autocomplete="lname" autofocus>
+                                    <input onkeydown="return /[a-z ]/i.test(event.key)" id="lname" type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" value="{{ old('lname') }}" required autocomplete="lname" autofocus>
                                     @error('lname')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -49,10 +49,10 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <label for="mname" class=" col-form-label text-md-start">{{ __(' Middle Name') }}<span class="text-danger"> *</span></label>
+                                <label for="mname" class=" col-form-label text-md-start">{{ __(' Middle Name') }}</label>
 
                                 <div class="">
-                                    <input onkeydown="return /[a-z]/i.test(event.key)" id="mname" type="text" class="form-control @error('mname') is-invalid @enderror" name="mname" value="{{ old('mname') }}" >
+                                    <input onkeydown="return /[a-z ]/i.test(event.key)" id="mname" type="text" class="form-control @error('mname') is-invalid @enderror" name="mname" value="{{ old('mname') }}" >
                                     @error('mname')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -347,11 +347,15 @@ if (pass.length > 7) {
 }else{
     $('.passmin').removeClass('d-none');
 }
+if (pass != 0 && passconfirm != 0) {
 if (pass == passconfirm) {
     console.log('equal');
     $('.passerror').addClass('d-none');
 }else{
     $('.passerror').removeClass('d-none');
+}
+}else{
+    $('.passerror').addClass('d-none');
 }
 });
 $( "#password-confirm" ).keyup(function() {
@@ -362,11 +366,15 @@ if (passconfirm.length > 7) {
 }else{
     $('.passconmin').removeClass('d-none');
 }
+if (pass != 0 && passconfirm != 0) {
 if (pass == passconfirm) {
     console.log('equal');
     $('.passerror').addClass('d-none');
 }else{
     $('.passerror').removeClass('d-none');
+}
+}else{
+    $('.passerror').addClass('d-none');
 }
 });
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
 
     /**
@@ -25,4 +25,32 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function staffHome()
+    {
+        $users = DB::select("SELECT *,TIMESTAMPDIFF(YEAR, birth_date, CURDATE()) AS age FROM csas1.users where user_type_id = 3;");
+        $files = DB::select("SELECT * FROM requirements;");
+        return view('staff/staffHome',compact('users','files'));
+    }
+    public function coordinatorHome()
+    {
+        $users = DB::select("SELECT * FROM csas1.users where user_type_id = 5;");
+        return view('coordinator/coordinatorHome',compact('users'));
+    }
+    public function applicantHome()
+    {
+        return view('applicant/applicantHome');
+    }
+    public function declined()
+    {
+        return view('applicant/declined');
+    }
+    public function examSchedule(){
+        $exams = DB::select("SELECT * FROM csas1.exams;");
+        return  $exams;
+
+    }
+    public function examiner(){
+
+            return view('applicant/examiner');
+        }
 }

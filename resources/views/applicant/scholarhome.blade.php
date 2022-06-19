@@ -3,9 +3,9 @@
 @section('content')
 <div class="scholar-home container-fluid mt-5">
     <div class="welcome-message">
-        <p>Welcome</p>
+        <h1>Welcome!</h1>
         <p>Castillejos Scholarship</p>
-        <h1 >APPLICATION SYSTEM </h1>
+        <h2>APPLICATION SYSTEM </h2>
     </div>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">

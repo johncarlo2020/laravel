@@ -90,28 +90,28 @@
                 </div>
             </header>
             <section class="anouncement container py-5 ">
-                <div class="row text-center mt-5 py-3">
+                <div class="row text-center mt-sm-1 mt-lg-5  py-lg-3 py-sm-1 ">
                     <h2>ANNOUNCEMENT</h2>
                     <p class="text-muted"><i>Castillejos Scholarship Application System</i></p>
                 </div>
-                <div class="row mt-5 text-center">
-                    <div class="col">
+                <div class="row mt-lg-5 mt-sm-1 text-center">
+                    <div class="col-lg-6 col-sm-12 mt-sm-2">
                         <h3>What are the Qualifications</h3>
-                        <ol class="text-center text-muted">
+                        <ol class="text-center text-muted p-sm-0 homeList">
                             <li>The applicant must be a resident at Castillejos, Zambales.</li>
                             <li>Graduating high school student or high school graduate with general average (GWA) of at least 85%</li>
                             <li>Must have a combined annual gross income of parents/guardian which does not exceed Three Hundred Thousand Pesos (PHP 300,000), or in cases where the income exceeds PhP 300,000 an applicant must present written certification or medical findings of liness or a family member, or school certifications of two or more dependents enrolled in college.</li>
                         </ol>
                         <div class="requirements text-muted text-center">
                             <p>What are the requirements?</p>
-                            <ul>
+                            <ul class="list2">
                                 <li>School ID</li>
                                 <li>Certificate of Grade</li>
                                 <li>Certificate of Registration</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-lg-6 col-sm-12 scheduleList">
                         <h3>Examination Schedules</h3>
                         <div class="schedule">
                             <p>August 22 - 23, 2022 </p>
@@ -121,13 +121,13 @@
 
             </section>
             <section class="anouncement container py-5 ">
-                <div class="row text-center mt-5 py-3">
+                <div class="row text-center mt-sm-1 mt-lg-5  py-lg-3 py-sm-1">
                     <h2>MISSION AND VISION</h2>
                     <p class="text-muted"><i>Castillejos Scholarship Application System</i></p>
                 </div>
-                <div class="timeline mt-3 py-3 px-5 pb-5 ">
-                    <div class="d-flex pb-4">
-                        <div class="timeline-panel ">
+                <div class="timeline mt-sm-1 mt-lg-5  py-lg-3 py-sm-1">
+                    <div class="d-lg-flex d-lg-flex d-sm-block pb-4">
+                        <div  class="timeline-panel w-sm-100 ">
                             <div class="timeline-heading">
                                 <h4 class="subheading">Mission </h4>
                             </div>
@@ -135,14 +135,15 @@
                         </div>
                         <div class="timeline-image "><img class="rounded-circle img-fluid" src="{{ asset('images\1.jpg') }}" alt="..."></div>
                     </div>
-                    <div class="timeline-inverted d-flex justify-content-end">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('images\2.jpg') }}" alt="..."></div>
+                    <div  class="timeline-inverted w-sm-100 d-lg-flex d-sm-block  justify-content-end">
+                        <div id="imgMove" class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('images\2.jpg') }}" alt="..."></div>
                         <div class="timeline-panel">
-                            <div class="timeline-heading text-start">
+                            <div class="timeline-heading text-sm-center text-lg-start">
                                 <h4 class="subheading">Vision</h4>
                             </div>
-                            <div class="timeline-body text-start"><p class="text-muted">Castillejos as a center of excellence and progress in the province of Zambales for sound investment opportunities, agro-industrial advancement, tourism and education under a transparent, dynamic and responsive leadership with God-fearing, empowered, environment-friendly and resilient constituency working under the spirit of unity in achieving a globally competitive economy and sustainable development.</p></div>
+                            <div class="timeline-body text-sm-center text-lg-start"><p class="text-muted">Castillejos as a center of excellence and progress in the province of Zambales for sound investment opportunities, agro-industrial advancement, tourism and education under a transparent, dynamic and responsive leadership with God-fearing, empowered, environment-friendly and resilient constituency working under the spirit of unity in achieving a globally competitive economy and sustainable development.</p></div>
                         </div>
+                        <div id="appendto"></div>
                     </div>
                 </div>
             </section>
@@ -162,6 +163,22 @@
                 //         });
 
                 // }
+
+
+                   // Optimalisation: Store the references outside the event handler:
+                    var $window = $(window);
+                    var $pane = $('#pane1');
+
+                    function checkWidth() {
+                        var windowsize = $window.width();
+                        if (windowsize < 575.98 || windowsize < 767.98 ) {
+                            $("#imgMove").last().prependTo("#appendto");
+                        }
+                    }
+                    // Execute on load
+                    checkWidth();
+                    // Bind event listener
+                    $(window).resize(checkWidth);
 
             </script>
     </body>

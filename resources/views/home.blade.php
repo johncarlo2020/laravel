@@ -95,7 +95,7 @@
 
         const [filez] = cor.files
         console.log(cor.files[0].size);
-        if(cor.files[0].size < 1000000){
+        if(cor.files[0].size < 5000000){
             console.log('maliit');
             $('#one').attr('value', '0');
             $('#corz').addClass('d-none');
@@ -126,7 +126,7 @@
 
         const [filez] = cog.files
         console.log(cog.files[0].size);
-        if(cog.files[0].size < 1000000){
+        if(cog.files[0].size < 5000000){
             console.log('maliit');
             $('#cogz').addClass('d-none');
             $('#two').attr('value', '0');
@@ -157,7 +157,7 @@
 
         const [filez] = id.files
         console.log(id.files[0].size);
-        if(id.files[0].size < 1000000){
+        if(id.files[0].size < 5000000){
             console.log('maliit');
             $('#three').attr('value', '0');
             $('#idz').addClass('d-none');

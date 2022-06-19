@@ -1,0 +1,259 @@
+section {
+    width: 100%;
+}
+body {
+    position: relative;
+}
+section ul,
+section ol {
+    list-style-position: inside;
+    font-size: 1rem;
+}
+section h3 {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+}
+section p {
+    font-size: 1.75rem;
+}
+.logo-text {
+    color: #ffc800;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    letter-spacing: 0.0625em;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    transition: font-size 0.3s ease-in-out;
+    /* font-size: clamp(1rem, 12vw+1rem, 1.25rem); */
+}
+.navbar-brand img {
+    height: 2rem;
+    transition: height 0.3s ease-in-out;
+    margin-top: -10px;
+}
+.header {
+    height: 100vh;
+    background: #0000009c;
+    width: 100%;
+}
+.header img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    object-fit: cover;
+    height: 100vh;
+}
+.headtext {
+    margin-top: 20%;
+}
+.headtext p {
+    font-size: 2.25rem;
+    font-style: italic;
+    line-height: 2.25rem;
+    margin-bottom: 2rem;
+    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.headtext h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.headtext button {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.anouncement h2 {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 2.5rem;
+}
+.anouncement p {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-panel {
+    width: 35%;
+    text-align: right;
+}
+.timeline-inverted .timeline-image {
+    margin-right: 57px;
+}
+
+.timeline-image {
+    margin-left: 87px;
+}
+.timeline-image img {
+    border: 7px solid #e9ecef;
+    border-radius: 100%;
+    width: 85%;
+}
+.timeline-inverted {
+    margin-top: 4rem;
+}
+.timeline::before {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 100%;
+    top: 24px;
+    left: 50%;
+    background-color: #e9ecef;
+    /* left: 0; */
+    z-index: -1;
+    margin-left: -1px;
+}
+.subheading {
+    margin-bottom: 0.5rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 1.75rem;
+}
+
+footer {
+    width: 100%;
+    margin-bottom: -25px;
+    padding: 20px;
+}
+
+/* log-inform */
+
+.login-form {
+    width: 500px;
+    background-color: #ecf0f3;
+    border-radius: 4px;
+    color: #000;
+    position: relative;
+    z-index: 9999;
+    height: 570px;
+    padding: 40px;
+    margin-top: 8% !important;
+    box-shadow: 9px 4px 250px 154px rgba(0, 0, 0, 0.05);
+}
+.login-form img {
+    width: 27%;
+    height: auto;
+    display: block;
+}
+
+.row.form-holder {
+    margin-top: 135px;
+}
+
+.login-form h5 {
+    font-size: 33px;
+    font-weight: 700;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.header-login {
+    overflow: none;
+}
+
+/* registartion style start here */
+img.background-img {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.registrationContainer {
+    position: relative;
+    z-index: 999;
+}
+
+.overlay-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    background: #000000a4;
+    top: 0;
+    left: 0;
+}
+
+/* .backgroundEmail{
+    background-image: asset('images/emailsent.jpg')  ;
+} */
+.backgroundEmail {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.backgroundEmail img {
+    height: 240px;
+    width: 80%;
+    object-fit: scale-down;
+}
+.fiiledesignContainer {
+    width: 100%;
+}
+.fiiledesign {
+    width: 100%;
+    border: 2px dashed #000;
+    border-radius: 4px;
+    text-align: center;
+}
+.modalContainer p {
+    padding: 5px 0 5px 10px !important;
+    margin: 0;
+    border-bottom: solid 1px rgb(196, 196, 196);
+}
+.modalContainer p:last-child {
+    padding: none !important;
+    margin: 0;
+    border-bottom: solid 1px rgb(196, 196, 196);
+}
+.legend-details {
+    background-color: rgb(197 211 255);
+    padding-left: 0px !important;
+}
+.cardContainer button,
+.cardContainer .paginate_button .current {
+    border-radius: 0 !important;
+}
+.dataTables_info,
+.dataTables_paginate {
+    margin-top: 20px;
+}
+#example {
+    border-top: 1px solid rgb(223, 223, 223);
+}
+.border-remove {
+    border: none !important;
+}

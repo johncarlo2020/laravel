@@ -74,7 +74,7 @@
                                             <a class="dropdown-item" href="{{ route('applicant.declined') }}"> Status </a>
                                         @elseif(Auth::user()->user_type_id == 5)
                                             <a class="dropdown-item" href="{{ route('applicant.home') }}"> Status </a>
-                                        @elseif(Auth::user()->user_type_id == 3 )
+                                        @elseif(Auth::user()->user_type_id == 3 && is_null(Auth::user()->exnumber))
                                             <a class="dropdown-item" href="{{ route('filesz') }}"> Upload Files </a>
                                         @elseif(Auth::user()->user_type_id == 6)
                                             <a class="dropdown-item" href="{{ route('applicant.examiner') }}"> Status </a>

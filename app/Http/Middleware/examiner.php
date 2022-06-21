@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use DB;
+use Auth;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,12 @@ class examiner
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if (Auth::user()->user_type_id == 6){
+            return $next($request);
+        }else{
+            // toastr()->error('!','ACCOUNT SUSPENDED!');        
+            Auth::logout();
+            return redirect('/login');
+                }
     }
 }

@@ -165,7 +165,7 @@ class coordinator extends Controller
         ];
          $data['fname'] = $email[0]->first_name;
          $data['lname'] = $email[0]->last_name;
-         $data['status'] = $email[0]->user_type_id;
+         $data['status'] = 'reject';
 
         Mail::to($email[0]->email)->send(new WelcomeMail( $data));
         toastr()->warning('Applicant Rejected Successfully',$email[0]->first_name .' '.$email[0]->last_name.' Will move to Declined');

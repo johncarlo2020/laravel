@@ -31,7 +31,10 @@ class RegisterController extends Controller
      * @var string
      */
     // protected $redirectTo = RouteServiceProvider::HOME;
-
+    protected function redirectTo()
+    {
+        return route('verify');
+    }
     /**
      * Create a new controller instance.
      *
@@ -97,7 +100,6 @@ class RegisterController extends Controller
         $school=DB::select("SELECT * FROM csas1.schools where id=$schoolid;");
         $address=$data['house'].' '.$brgys[0]->brgyDesc.', '.$municipalities[0]->citymunDesc.' '.$provinces['0']->provDesc.' '.$regions[0]->regDesc ;
        // dd($regions);
-
 
         return User::create([
             'user_type_id'=>5,

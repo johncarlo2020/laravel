@@ -97,7 +97,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form action="{{ route('coordinator.deletes') }}" method="post">
-                                                    @csrf 
+                                                    @csrf
                                                     @method('post')
                                                     <input type="" name="id"  value="{{$user->id}}" hidden>
                                                     <input type="" name="name"  value="{{$user->first_name}} {{$user->middle_name}} {{$user->last_name}}" hidden>
@@ -126,7 +126,7 @@
     <div class="modal-dialog">
       <div class="modal-content p-2">
         <div class="modal-header p-2">
-          <h5 class="modal-title fw-bold" id="exampleModalLabel">Student Infromation</h5>
+          <h5 class="modal-title fw-bold" id="exampleModalLabel">Student Information</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body modalContainer">

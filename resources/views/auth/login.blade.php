@@ -77,4 +77,9 @@
 </header>
 
 
+@jquery
+@toastr_js
+@toastr_css
+@toastr_render
+
 @endsection

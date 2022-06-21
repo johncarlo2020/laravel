@@ -22,6 +22,12 @@ class scholar extends Controller
         return view('success');
         
     }
+    public function verify()
+    {
+        // dd('scholarcontroller');
+        return view('auth/verify');
+        
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -117,13 +123,14 @@ class scholar extends Controller
                 }
                 $pat = $path .'/'. $imagename;
         $exist = DB::select("UPDATE requirements SET id_='$pat' WHERE id=$user ");
+        $exist = DB::select("UPDATE users SET requirements=1 WHERE id=$user ");
         toastr()->success('Record Updated Successfully','Scholar Requirements');
-        return redirect()->route('withfiles');
+        return redirect()->route('withfilesss');
 
         // return redirect('/scholar/success');
         }else{ 
         // toastr()->warning($data['name'] .' Id is empty!','Scholar');
-        return redirect()->route('withfiles');
+        return redirect()->route('withfilesss');
 
         // return redirect('/scholar/success');
         }
@@ -139,6 +146,7 @@ class scholar extends Controller
         $exam = DB::select("SELECT * FROM exams where id = $id;");
         return view('/applicant.scholarzz',compact('users','exam','age','files'));
     }
+    
     public function withoutfiles(){
         $id  = Auth::user()->id;
         $users = DB::select("SELECT * FROM users where id = $id;");

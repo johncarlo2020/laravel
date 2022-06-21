@@ -69,12 +69,22 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     @if(Auth::user()->user_type_id != 1 and Auth::user()->user_type_id != 2 and Auth::user()->user_type_id != 7)
+                                        @if(Auth::user()->user_type_id == 6)
+                                            <a class="dropdown-item" href="{{ route('withfiless') }}" > Profile  </a>
+                                        @elseif(Auth::user()->user_type_id == 3)
+                                            <a class="dropdown-item" href="{{ route('withfilesss') }}" > Profile  </a>
+                                        @else
                                             <a class="dropdown-item" href="{{ route('withfiles') }}" > Profile  </a>
+                                        @endif
                                         @if(Auth::user()->user_type_id == 7)
                                             <a class="dropdown-item" href="{{ route('applicant.declined') }}"> Status </a>
                                         @elseif(Auth::user()->user_type_id == 5)
-                                            <a class="dropdown-item" href="{{ route('applicant.home') }}"> Status </a>
-                                        @elseif(Auth::user()->user_type_id == 3 && is_null(Auth::user()->exnumber))
+                                            @if (is_null(auth()->user()->email_verified_at)) 
+                                                <a class="dropdown-item" href="{{ route('verify') }}"> Status </a>
+                                            @else
+                                                <a class="dropdown-item" href="{{ route('applicant.home') }}"> Status </a>
+                                            @endif
+                                        @elseif(Auth::user()->user_type_id == 3 && is_null(Auth::user()->requirements))
                                             <a class="dropdown-item" href="{{ route('filesz') }}"> Upload Files </a>
                                         @elseif(Auth::user()->user_type_id == 6)
                                             <a class="dropdown-item" href="{{ route('applicant.examiner') }}"> Status </a>

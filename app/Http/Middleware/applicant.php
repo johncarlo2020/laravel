@@ -18,10 +18,11 @@ class applicant
      */
     public function handle(Request $request, Closure $next)
     {
+        // dd(Auth::user()->user_type_id);
         if (Auth::user()->user_type_id == 5){
             return $next($request);
         }else{
-            toastr()->error('Contact System Administrator!','ACCOUNT SUSPENDED!');        
+            // toastr()->error('!','ACCOUNT SUSPENDED!');        
             Auth::logout();
             return redirect('/login');
                 }

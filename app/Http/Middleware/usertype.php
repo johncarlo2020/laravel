@@ -16,6 +16,7 @@ class usertype
      */
     public function handle(Request $request, Closure $next)
     {
+        // dd('usertypemiddleware');
         if(auth()->user()->user_type_id == 1){
             return $next($request);
         }

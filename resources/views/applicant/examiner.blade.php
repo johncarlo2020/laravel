@@ -10,7 +10,7 @@
                 <h2 class=" mt-2 fw-bold"> Welcome! {{ Auth::user()->first_name }}</h2>
                 <p class="p-0 m-0">You are now <b>Qualified</b> to take an exam.</p>
                 <p class="p-0 m-0">Please check your email for your exam schedule.</p><br>
-                <p class="p-0 m-0">Please bring a copy of the <u>examination pass</u> as proof of qualification to take the exam.</p>
+                <p class="p-0 m-0">Please bring a copy of the <u>Examination Pass</u> as proof of qualification to take the exam.</p>
                 <p class="p-0 m-0">Goodluck! Thankyou.</p>
                 </div>
             </div>

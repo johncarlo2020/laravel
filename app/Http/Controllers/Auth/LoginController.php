@@ -57,6 +57,13 @@ class LoginController extends Controller
                 return redirect()->route('staff.home');
             }elseif(auth()->user()->user_type_id == 2){
                 return redirect()->route('coordinator.home');
+            }elseif(auth()->user()->user_type_id == 5){
+                // dd('asdadsdas');
+                if (is_null(auth()->user()->email_verified_at)) {
+                    return view('auth/verify');
+                }else{
+                    return redirect()->route('applicant.home');
+                }
             }elseif(auth()->user()->user_type_id == 7){
                 return redirect()->route('applicant.declined');
             }elseif(auth()->user()->user_type_id == 6){

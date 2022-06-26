@@ -37,9 +37,16 @@
                     <ul class="navbar-nav me-auto">
 
                     </ul>
-
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                    @guest
+                    @else
+                    @if(is_null(Auth::user()->picture))
+                    @else
+                    <img class="rounded-circle" style="width:3em;max-height:3em;" alt="10x10" src="{{ asset(Auth::user()->picture) }}">
+                    @endif
+                    @endguest
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -47,12 +54,12 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">Pre-Enlistment</a>
                                 </li>
                             @endif
+                            
                         @else
 
                             <li class="nav-item dropdown">

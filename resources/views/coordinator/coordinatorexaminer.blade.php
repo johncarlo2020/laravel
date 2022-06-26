@@ -24,20 +24,26 @@
                 {{-- <div class="card-header">Coordinatorz</div> --}}
                 <div class="card-body">
                 <table id="example" class="display" style="width:100%">
-                        <thead>
+                <thead>
                             <tr>
-                                <th>Fullname</th>
+                                <th>Last&nbsp;Name</th>
+                                <th>First&nbsp;Name</th>
+                                <th>Middle&nbsp;Name</th>
                                 <th>Address</th>
                                 <th>School</th>
+                                <th>Exam&nbsp;score</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($users as $user)
                             <tr>
-                                <td>{{$user->first_name}} {{$user->middle_name}} {{$user->last_name}}</td>
-                                <td>{{$user->address}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->last_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->first_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->middle_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->address}}</td>
                                 <td>{{$user->school_name}}</td>
+                                <td><center>{{$user->score}} %</center></td>
                                 <td>
                                 @foreach($stab as $stb)
                                         @if($user->id == $stb->id)

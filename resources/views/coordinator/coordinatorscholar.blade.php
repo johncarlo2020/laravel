@@ -24,22 +24,26 @@
                 <table id="example" class="display table" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Fullname</th>
+                                <th>Last&nbsp;Name</th>
+                                <th>First&nbsp;Name</th>
+                                <th>Middle&nbsp;Name</th>
                                 <th>Address</th>
                                 <th>School</th>
-                                <th>Exam score</th>
+                                <th>Exam&nbsp;score</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($users as $user)
                             <tr>
-                                <td>{{$user->first_name}} {{$user->middle_name}} {{$user->last_name}}</td>
-                                <td>{{$user->address}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->last_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->first_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->middle_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->address}}</td>
                                 <td>{{$user->school_name}}</td>
                                 <td><center>{{$user->score}} %</center></td>
                                 <td>
-                                    <button first_name="{{$user->first_name}}" last_name="{{$user->last_name}}" middle_name="{{$user->middle_name}}" suffix="{{$user->suffix}}" address="{{$user->address}}" age="{{$user->age}}" gender="{{$user->gender}}" birth_date="{{$user->birth_date}}" course="{{$user->course}}" school_name="{{$user->school_name}}" school_address="{{$user->school_address}}" email="{{$user->email}}" income="{{$user->income}}" class="details btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailed">Detailed Info</button>
+                                    <button first_name="{{$user->first_name}}" last_name="{{$user->last_name}}" middle_name="{{$user->middle_name}}" suffix="{{$user->suffix}}" address="{{$user->address}}" age="{{$user->age}}" gender="{{$user->gender}}" birth_date="{{$user->birth_date}}" course="{{$user->course}}" school_name="{{$user->school_name}}" school_address="{{$user->school_address}}" email="{{$user->email}}" income="{{$user->income}}" class="details btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailed">Detailed&nbsp;Info</button>
                                     @foreach($files as $file)
                                         @if($user->id == $file->id)
                                             <button  class="files btn btn-outline-primary"  data-bs-toggle="modal" data-bs-target=".files{{$file->id}}">View Files</button>
@@ -86,7 +90,7 @@
                                             </div>
                                             @endif
                                     @endforeach
-                                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$user->id}}">Delete</button>
+                                    <!-- <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$user->id}}">Delete</button> -->
                                             <!-- delete -->
                                             <div class="modal fade" id="delete{{$user->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered">

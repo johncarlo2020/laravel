@@ -29,6 +29,7 @@
                                 <th>Middle&nbsp;Name</th>
                                 <th>Address</th>
                                 <th>School</th>
+                                <th>Year Approved</th>
                                 <th>Exam&nbsp;score</th>
                                 <th>Action</th>
                             </tr>
@@ -41,6 +42,7 @@
                                 <td style=" text-transform: capitalize;">{{$user->middle_name}}</td>
                                 <td style=" text-transform: capitalize;">{{$user->address}}</td>
                                 <td>{{$user->school_name}}</td>
+                                <td style=" text-transform: capitalize;">{{date('Y', strtotime($user->updated_at))}}</td>
                                 <td><center>{{$user->score}} %</center></td>
                                 <td>
                                     <button first_name="{{$user->first_name}}" last_name="{{$user->last_name}}" middle_name="{{$user->middle_name}}" suffix="{{$user->suffix}}" address="{{$user->address}}" age="{{$user->age}}" gender="{{$user->gender}}" birth_date="{{$user->birth_date}}" course="{{$user->course}}" school_name="{{$user->school_name}}" school_address="{{$user->school_address}}" email="{{$user->email}}" income="{{$user->income}}" class="details btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailed">Detailed&nbsp;Info</button>

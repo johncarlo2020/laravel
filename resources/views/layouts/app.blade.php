@@ -12,6 +12,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="icon" type="image/png" href="{{ asset('images\logo.png') }}">
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -37,7 +39,7 @@
                     <ul class="navbar-nav me-auto">
 
                     </ul>
-                    
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                     @guest
@@ -59,7 +61,7 @@
                                     <a class="nav-link" href="{{ route('register') }}">Pre-Enlistment</a>
                                 </li>
                             @endif
-                            
+
                         @else
 
                             <li class="nav-item dropdown">
@@ -86,7 +88,7 @@
                                         @if(Auth::user()->user_type_id == 7)
                                             <a class="dropdown-item" href="{{ route('applicant.declined') }}"> Status </a>
                                         @elseif(Auth::user()->user_type_id == 5)
-                                            @if (is_null(auth()->user()->email_verified_at)) 
+                                            @if (is_null(auth()->user()->email_verified_at))
                                                 <a class="dropdown-item" href="{{ route('verify') }}"> Status </a>
                                             @else
                                                 <a class="dropdown-item" href="{{ route('applicant.home') }}"> Status </a>
@@ -114,6 +116,7 @@
             @yield('content')
         </main>
     </div>
+
 
 
     <!-- @jquery -->

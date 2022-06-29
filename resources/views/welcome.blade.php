@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>CSAS</title>
+        <link rel="icon" type="image/png" href="{{ asset('images\logo.png') }}">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -115,6 +116,7 @@
                         <h3>Examination Schedules</h3>
                         <div class="schedule">
                             <p>August 22 - 23, 2022 </p>
+                            <p>500 Applicants limit per day only</p>
                         </div>
                     </div>
                 </div>

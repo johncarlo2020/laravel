@@ -14,7 +14,9 @@
                 <table id="example" class="display table" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Fullname</th>
+                                <th>Last&nbsp;Name</th>
+                                <th>First&nbsp;Name</th>
+                                <th>Middle&nbsp;Name</th>
                                 <th>Address</th>
                                 <th>School</th>
                                 <th>Exam Score</th>
@@ -24,7 +26,9 @@
                         <tbody>
                             @foreach($users as $user)
                             <tr>
-                                <td>{{$user->first_name}} {{$user->middle_name}} {{$user->last_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->last_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->first_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->middle_name}}</td>
                                 <td>{{$user->address}}</td>
                                 <td>{{$user->school_name}}</td>
                                 <td>{{$user->score}} %</td>

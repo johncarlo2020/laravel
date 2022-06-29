@@ -25,7 +25,9 @@
                 <table id="example" class="display table" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Fullname</th>
+                                <th>Last&nbsp;Name</th>
+                                <th>First&nbsp;Name</th>
+                                <th>Middle&nbsp;Name</th>
                                 <th>Address</th>
                                 <th>School</th>
                                 <th>Exam score</th>
@@ -35,7 +37,9 @@
                         <tbody>
                             @foreach($users as $user)
                             <tr>
-                                <td>{{$user->first_name}} {{$user->middle_name}} {{$user->last_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->last_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->first_name}}</td>
+                                <td style=" text-transform: capitalize;">{{$user->middle_name}}</td>
                                 <td>{{$user->address}}</td>
                                 <td>{{$user->school_name}}</td>
                                 <td><center>{{$user->score}} %</center></td>
@@ -53,7 +57,7 @@
                                           </div>
                                           <div class="modal-body">
                                             <form action="{{ route('coordinator.delete') }}" method="post">
-                                              @csrf 
+                                              @csrf
                                               @method('post')
                                               <input type="" name="id"  value="{{$user->id}}" hidden>
                                               <input type="" name="name"  value="{{$user->first_name}} {{$user->middle_name}} {{$user->last_name}}" hidden>
@@ -107,7 +111,7 @@
               </div>
               <div class="accept-button d-none row mt-3">
                   <div class="col">
-                    <button type="button" class="btn btn-outline-danger rounded-0 w-100" data-bs-dismiss="modal" >No</button>  
+                    <button type="button" class="btn btn-outline-danger rounded-0 w-100" data-bs-dismiss="modal" >No</button>
                   </div>
                   <div class="col">
                     <a href="" type="button" class="accepted btn btn btn-success rounded-0 w-100">Yes</a>
@@ -120,7 +124,7 @@
               </div>
               <div class="reject-button d-none row mt-3">
                   <div class="col">
-                    <button type="button" class="btn btn-outline-danger rounded-0 w-100" data-bs-dismiss="modal" >No</button>  
+                    <button type="button" class="btn btn-outline-danger rounded-0 w-100" data-bs-dismiss="modal" >No</button>
                   </div>
                   <div class="col">
                     <a href="" type="button" class="rejected btn btn btn-success rounded-0 w-100">Yes</a>
@@ -187,14 +191,14 @@ $('.details').on('click', function(e) {
       $(".income").text( income).change();
 
       $('.modal-title').removeClass('d-none');
-      $('.student-info').removeClass('d-none'); 
+      $('.student-info').removeClass('d-none');
       $('.reject-button').addClass('d-none');
       $('.reject').addClass('d-none');
       $('.accept-button').addClass('d-none');
       $('.accept').addClass('d-none');
-      $('.default').removeClass('d-none'); 
-      $('.modal-footer').removeClass('d-none');  
-      $('.modal-header').removeClass('border-remove'); 
+      $('.default').removeClass('d-none');
+      $('.modal-footer').removeClass('d-none');
+      $('.modal-header').removeClass('border-remove');
 
 });
 function accept(){

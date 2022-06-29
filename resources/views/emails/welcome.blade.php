@@ -7,7 +7,7 @@
                     <div class="">
                         <h4 style="font-size:25px; margin: 0;">Castillejos Scholarship APPLICATION SYSTEM</h4>
                         @if ($data['status'] == 6 )
-                        <h4 style="font-size:25px; margin: 0; margin-left:auto;">Examination Pass</h4>
+                        <h4 style="font-size:25px; margin: 0; margin-left:auto;">Examination Slip</h4>
                         @endif
 
                     </div>
@@ -51,7 +51,7 @@
                         <h5 style="    font-size: 19px;
                         margin-bottom: 3px;margin-top:10px;
                        ">You are now a Scholar!</h5>
-                        <p style="margin-bottom: 0;"><span class="font-weight-bold d-block mt-4">Congratulations  ,<b> {{ $data['fname'] }} {{ $data['lname'] }} for passing the examination, having a score above 75%, the passing rate. </b></span></p>
+                        <p style="margin-bottom: 0;"><span class="font-weight-bold d-block mt-4">Congratulations  ,<b> {{ $data['fname'] }} {{ $data['lname'] }} </b> for passing the examination, having a score above 75%, the passing rate. </span></p>
                         <p style=" padding-bottom:0px;margin-bottom: 0; "><span>You are now a scholar!</span></p>
                         <div class="payment border-top mt-3 mb-3 border-bottom table-responsive" style="padding: 0 0; border-bottom:solid 1px rgb(134, 134, 134);border-top:solid 1px rgb(134, 134, 134); margin: 20px 0;">
                         </div>

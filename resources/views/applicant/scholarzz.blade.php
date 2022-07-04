@@ -27,8 +27,8 @@
                             <p><b>Course :          </b>{{$users[0]->course}} </p>
                             <p><b>School :          </b>{{$users[0]->school_name}} </p>
                             <p><b>School Address :  </b>{{$users[0]->school_address}}</p>
-                            <p class="h6  fw-bold legend-details">Montly income</p>
-                            <p><b>Amount :          </b>{{$users[0]->income}}</p>
+                            <p class="h6  fw-bold legend-details">Monthly income</p>
+                            <p><b>      </b>{{$users[0]->income}}</p>
                             <p class="h6  fw-bold legend-details">Days Scholar</p>
                             <p><b>Amount :          </b>{{$users[0]->datez}} Days</p>
                         </div>

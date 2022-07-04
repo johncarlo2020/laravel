@@ -112,8 +112,8 @@
             <!-- <p><b>Year : </b>           <span class=""></span></p> -->
             <p><b>School : </b> <span class="school_name"></span></p>
             <p><b>School Address : </b><span class="school_address"></span></p>
-            <p class="h6  fw-bold legend-details">Montly income</p>
-            <p><b>Amount : </b><span class="income"></span></p>
+            <p class="h6  fw-bold legend-details">Monthly income</p>
+            <p><b></b><span class="income"></span></p>
 
 
           </div>

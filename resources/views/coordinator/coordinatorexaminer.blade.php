@@ -82,8 +82,8 @@
             <p><b>Course : </b><span class="course"></span></p>
             <p><b>School : </b> <span class="school_name"></span></p>
             <p><b>School Address : </b><span class="school_address"></span></p>
-            <p class="h6  fw-bold legend-details">Montly income</p>
-            <p><b>Amount : </b><span class="income"></span></p>
+            <p class="h6  fw-bold legend-details">Monthly income</p>
+            <p><b></b><span class="income"></span></p>
             <p class="h6 fw-bold legend-details">Stab Number</p>
             <p><b>Date : </b><span class="examdate"></span></p>
             <p><b>Schedule : </b><span class="sched"></span></p>

@@ -106,6 +106,7 @@
 
                                 <div class="">
                                     <input id="bday" type="date" class="form-control @error('bday') is-invalid @enderror" name="bday" value="{{ old('bday') }}" required autocomplete="bday">
+                                    <h6 class="bdayerror text-danger d-none">Age cannot go lower than 10 years old!</h6>
 
                                     @error('bday')
                                         <span class="invalid-feedback" role="alert">
@@ -380,9 +381,23 @@ if (pass == passconfirm) {
 
 $( "#register" ).click(function() {
     var pass=$('#password').val()
+    var bday=$('#bday').val()
     var passconfirm=$('#password-confirm').val()
+    // console.log((Date.now() - bday) / (31557600000));
+    var newbday = new Date(bday);
+    console.log(new Date(bday));
+    console.log(('tofixed' /new Date(bday)).toFixed);
+    // console.log('age = ' + (Date.now() - newbday) / (31557600000));
+    var ages = ~~((Date.now() - newbday) / (31557600000));
+     age = ((ages).toFixed(0));
+    console.log(age);
     console.log(pass);
     console.log(passconfirm);
+if (age > 9) {
+    $('.bdayerror').addClass('d-none');
+}else{
+    $('.bdayerror').removeClass('d-none');
+}
 if (pass.length > 7) {
     $('.passmin').addClass('d-none');
 }else{
@@ -400,7 +415,7 @@ if (pass == passconfirm) {
     $('.passerror').removeClass('d-none');
 }
 
-if (pass == passconfirm && pass.length > 7 && passconfirm.length > 7) {
+if (pass == passconfirm && pass.length > 7 && passconfirm.length > 7 && age > 9) {
     console.log('if');
     $( "#submit" ).click();
 }else{
